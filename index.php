@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <title>Calculator Apps</title>
+        
+    </head>
+    
+    <body>
+        
+        <form action="index.php" method="GET">
+            
+            <table>
+                
+                <tr>
+                    
+                    <td>First Number</td>
+                    
+                    <td><input type="text" name="firstNumberText"</td>
+                    
+                </tr>
+                
+                <tr>
+                    
+                    <td>Second Number</td>
+                    
+                    <td><input type="text" name="secondNumberText"</td>
+                    
+                </tr>                
+                                
+            </table>
+            
+            <table>
+                
+                <tr>             
+                    
+                    <td><input type="submit" name="additionButton" value="Add"</td>
+                    
+                    <td><input type="submit" name="subtractionButton" value="Subtract"</td>
+                    
+                    <td><input type="submit" name="muiltiplicationButton" value="Muiltiply"</td>
+                    
+                    <td><input type="submit" name="divisionButton" value="Divide"</td>
+                    
+                </tr>
+                
+            </table>
+            
+        </form>
+        
+        <?php
+        
+        require_once 'calculator.php';
+        
+        $a_calculator = new Calculator();
+        
+        if(isset($_GET['additionButton']) || isset($_GET['subtractionButton']) || isset($_GET['muiltiplicationButton']) ||isset($_GET['divisionButton'])   )
+        {
+            $a_calculator->first_number = $_GET['firstNumberText'];
+            
+            $a_calculator->second_number = $_GET['secondNumberText'];
+            
+            if(isset($_GET['additionButton']))
+            {         
+                echo 'The value of Additon is : '.$a_calculator->get_value_of_addition();
+            }
+        
+            elseif(isset($_GET['subtractionButton']))
+            {         
+                echo 'The value of subtraction is : '.$a_calculator->get_value_of_subtraction();
+            }
+        
+            elseif(isset($_GET['muiltiplicationButton']))
+            {         
+                echo 'The value of multiply is : '.$a_calculator->get_value_of_muiltiplication();
+            }
+        
+            elseif(isset($_GET['divisionButton']))
+            {         
+                echo 'The value of division is : '.$a_calculator->get_value_of_division();
+            }
+        
+        }
+        
+        
+        
+        
+        ?>
+        
+    </body>
+    
+</html>
