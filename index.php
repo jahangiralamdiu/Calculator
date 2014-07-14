@@ -61,30 +61,30 @@ and open the template in the editor.
         
         $a_calculator = new Calculator();
         
-        if(isset($_GET['additionButton']) || isset($_GET['subtractionButton']) || isset($_GET['muiltiplicationButton']) ||isset($_GET['divisionButton'])   )
+        if(isset($_GET['firstNumberText']) && isset($_GET['secondNumberText'] ))
         {
-            $a_calculator->first_number = $_GET['firstNumberText'];
+            $first_number = $_GET['firstNumberText'];
             
-            $a_calculator->second_number = $_GET['secondNumberText'];
+            $second_number = $_GET['secondNumberText'];
             
             if(isset($_GET['additionButton']))
             {         
-                echo 'The value of Additon is : '.$a_calculator->get_value_of_addition();
+                echo 'The value of Additon is : '.$a_calculator->add($first_number, $second_number);
             }
         
             elseif(isset($_GET['subtractionButton']))
             {         
-                echo 'The value of subtraction is : '.$a_calculator->get_value_of_subtraction();
+                echo 'The value of subtraction is : '.$a_calculator->subtract($first_number, $second_number);
             }
         
             elseif(isset($_GET['muiltiplicationButton']))
             {         
-                echo 'The value of multiply is : '.$a_calculator->get_value_of_muiltiplication();
+                echo 'The value of multiply is : '.$a_calculator->multiply($first_number, $second_number);
             }
         
             elseif(isset($_GET['divisionButton']))
             {         
-                echo 'The value of division is : '.$a_calculator->get_value_of_division();
+                echo 'The value of division is : '.$a_calculator->divide($first_number, $second_number);
             }
         
         }

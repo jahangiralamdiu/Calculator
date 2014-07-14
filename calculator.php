@@ -12,28 +12,25 @@
  * @author bcc
  */
 class Calculator {
+ 
     
-    public $first_number;
-    
-    public $second_number;
-    
-    public function get_value_of_addition ()
+    public function add ($first_number, $second_number)
     {
-        return $this->first_number + $this->second_number;
+        return $first_number + $second_number;
     }
     
-    public function get_value_of_subtraction ()
+    public function subtract ($first_number, $second_number)
     {
-        return $this->first_number - $this->second_number;
+        return $first_number - $second_number;
     }
     
-    public function get_value_of_muiltiplication ()
+    public function multiply ($first_number, $second_number)
     {
-        return $this->first_number * $this->second_number;
+        return $first_number * $second_number;
     }
     
-    public function get_value_of_division ()
+    public function divide ($first_number, $second_number)
     {
-        return $this->first_number / $this->second_number;
+        return $first_number / $second_number;
     }
 }
